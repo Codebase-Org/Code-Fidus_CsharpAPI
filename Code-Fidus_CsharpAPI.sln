@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Code-Fidus_CsharpAPI", "Code-Fidus_CsharpAPI\Code-Fidus_CsharpAPI.csproj", "{9783A2D8-1436-455B-A769-2501B2A5868A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Code-Fidus_CsharpAPI", "Code-Fidus_CsharpAPI\Code-Fidus_CsharpAPI.csproj", "{9783A2D8-1436-455B-A769-2501B2A5868A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest", "UnitTest\UnitTest.csproj", "{CAFAC2D6-4424-4F5A-8A7C-5E7FDBBE4B22}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{9783A2D8-1436-455B-A769-2501B2A5868A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9783A2D8-1436-455B-A769-2501B2A5868A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9783A2D8-1436-455B-A769-2501B2A5868A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAFAC2D6-4424-4F5A-8A7C-5E7FDBBE4B22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAFAC2D6-4424-4F5A-8A7C-5E7FDBBE4B22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAFAC2D6-4424-4F5A-8A7C-5E7FDBBE4B22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAFAC2D6-4424-4F5A-8A7C-5E7FDBBE4B22}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
