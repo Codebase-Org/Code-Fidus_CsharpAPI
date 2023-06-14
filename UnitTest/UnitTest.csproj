@@ -22,4 +22,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Code-Fidus_CsharpAPI\Code-Fidus_CsharpAPI.csproj" />
+  </ItemGroup>
+
 </Project>
