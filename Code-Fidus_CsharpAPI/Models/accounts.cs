@@ -16,7 +16,6 @@ namespace Code_Fidus_CsharpAPI.Models
 
         [ForeignKey("roles.role_id")]
         public int role_id { get; set; }
-        public roles role { get; set; }
 
         [Required]
         public DateTime created_date { get; set; }

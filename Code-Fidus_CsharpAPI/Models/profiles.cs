@@ -9,7 +9,6 @@ namespace Code_Fidus_CsharpAPI.Models
         public int profile_id { get { return id; } set { id = value; } }
         [ForeignKey("accounts.account_id")]
         public int account_id { get; set; }
-        public accounts account { get; set; }
         [Required]
         public string firstname { get; set; }
         public string secondname { get; set; }

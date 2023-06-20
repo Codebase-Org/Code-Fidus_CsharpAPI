@@ -44,30 +44,31 @@ namespace Code_Fidus_CsharpAPI.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateEntity(int id, T entity)
+        public async Task<IActionResult> UpdateEntity(int id, T entity) // Fungere ikke
         {
             if (id != entity.id)
             {
-                return BadRequest();
+                return BadRequest("if id != entity.id");
             }
 
             if(!await EntityExists(id))
             {
-                return NotFound();
+                return NotFound("if EntityExists(id)");
             }
 
             _context.Entry(entity).State = EntityState.Modified;
             await _context.SaveChangesAsync();
 
-            return Ok(entity);
+            return NoContent();
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateEntity(T entity)
+        public async Task<IActionResult> CreateEntity(T entity) // Giver forkert returværdi.
         {
             await _context.Set<T>().AddAsync(entity);
             await _context.SaveChangesAsync();
-            return CreatedAtAction("Detail", new { id = entity.id }, entity);
+            Console.WriteLine("Vi prøver at create...");
+            return CreatedAtAction("detail", new { id = entity.id }, entity);
         }
 
         [HttpDelete("{id}")]
@@ -77,7 +78,7 @@ namespace Code_Fidus_CsharpAPI.Controllers
 
             if (entity == null)
             {
-                return NotFound();
+                return NotFound("if entity == null");
             }           
 
             _context.Set<T>().Remove(entity);

@@ -11,7 +11,6 @@ namespace Code_Fidus_CsharpAPI.Models
         public int from_account_id { get; set; }
         [ForeignKey("accounts.account_id")]
         public int to_account_id { get; set; }
-        public accounts account { get; set; }
         [Required]
         public string subject { get; set; }
         public string content { get; set; }
