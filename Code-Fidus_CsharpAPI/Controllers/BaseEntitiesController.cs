@@ -63,12 +63,12 @@ namespace Code_Fidus_CsharpAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateEntity(T entity) // Giver forkert returværdi.
+        public async Task<IActionResult> CreateEntity(T entity) // Giver http 500 status, på succesfuld create.
         {
             await _context.Set<T>().AddAsync(entity);
             await _context.SaveChangesAsync();
             Console.WriteLine("Vi prøver at create...");
-            return CreatedAtAction("detail", new { id = entity.id }, entity);
+            return CreatedAtAction("Detail", new { id = entity.id }, entity);
         }
 
         [HttpDelete("{id}")]
