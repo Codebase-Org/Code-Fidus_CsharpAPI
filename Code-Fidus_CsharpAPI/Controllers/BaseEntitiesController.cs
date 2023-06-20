@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Code_Fidus_CsharpAPI.Database;
 using Code_Fidus_CsharpAPI.Models;
@@ -51,7 +46,7 @@ namespace Code_Fidus_CsharpAPI.Controllers
                 return BadRequest("if id != entity.id");
             }
 
-            if(!await EntityExists(id))
+            if (!await EntityExists(id))
             {
                 return NotFound("if EntityExists(id)");
             }
@@ -63,12 +58,11 @@ namespace Code_Fidus_CsharpAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateEntity(T entity) // Giver http 500 status, på succesfuld create.
+        public async Task<IActionResult> CreateEntity(T entity) 
         {
             await _context.Set<T>().AddAsync(entity);
             await _context.SaveChangesAsync();
-            Console.WriteLine("Vi prøver at create...");
-            return CreatedAtAction("Detail", new { id = entity.id }, entity);
+            return CreatedAtAction("GetEntity", new { id = entity.id }, entity);
         }
 
         [HttpDelete("{id}")]
@@ -89,7 +83,17 @@ namespace Code_Fidus_CsharpAPI.Controllers
 
         private Task<bool> EntityExists(int id)
         {
-            return _context.Set<T>().AnyAsync(e => e.id == id);
+            var entityType = typeof(T);
+            var idPropertyName = entityType.GetProperties().FirstOrDefault(p => p.Name.EndsWith("id")).Name.ToString();
+            //var test = _context.roles.AnyAsync(e => Convert.ToInt32(entityType.GetProperty(idPropertyName[1]).GetValue(e)) == id);
+            var et = entityType.GetProperty(idPropertyName);
+
+            var tt = _context.roles.FirstOrDefault(i => i.role_id == id);
+            var test = _context.Set<T>().AnyAsync(e => e.GetType().GetProperties().FirstOrDefault(p => p.Name.EndsWith("id")).Name == "" + id);
+            
+            //p.Name.Equals("id", StringComparison.OrdinalIgnoreCase))?.Name;
+            //return _context.Set<T>().AnyAsync(e => e.id == id);
+            return Task.FromResult(false);
         }
     }
 }
