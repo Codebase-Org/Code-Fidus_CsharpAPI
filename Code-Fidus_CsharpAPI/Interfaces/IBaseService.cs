@@ -1,10 +1,14 @@
 ﻿using Code_Fidus_CsharpAPI.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Code_Fidus_CsharpAPI.Interfaces
 {
-    public interface IBaseService
+    public interface IBaseService<T> where T : BaseEntity
     {
-        Task<BaseEntity> GetEntitiesServ(BaseEntity entity);
-        Task<BaseEntity> CreateAsync(BaseEntity entity);
+        Task<List<T>> GetEntitiesService();
+        Task<T> GetEntityService(int id);
+        Task<bool> UpdateEntityService(int id, BaseEntity entity);
+        Task CreateEntityService(BaseEntity entity);
+        Task<bool> DeleteEntityService(int id);
     }
 }
