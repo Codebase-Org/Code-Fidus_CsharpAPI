@@ -26,12 +26,12 @@ namespace Code_Fidus_CsharpAPI.Services
             return await _context.GetEntityRepository(id);
         }
 
-        public async Task<bool> UpdateEntityService(int id, BaseEntity entity)
+        public async Task<bool> UpdateEntityService(int id, T entity)
         {
             return await _context.UpdateEntityRepository(id, entity);
         }
 
-        public async Task CreateEntityService(BaseEntity entity)
+        public async Task CreateEntityService(T entity)
         {
             await _context.CreateEntityRepository(entity);
         }
