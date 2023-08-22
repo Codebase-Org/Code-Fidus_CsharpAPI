@@ -7,8 +7,8 @@ namespace Code_Fidus_CsharpAPI.Interfaces
     {
         Task<List<T>> GetEntitiesRepository();
         Task<T> GetEntityRepository(int id);
-        Task<bool> UpdateEntityRepository(int id, BaseEntity entity);
-        Task CreateEntityRepository(BaseEntity entity);
+        Task<bool> UpdateEntityRepository(int id, T entity);
+        Task CreateEntityRepository(T entity);
         Task<bool> DeleteEntityRepository(int id);
         Task<List<posts>> searchPostsRepository(string value, int? categoryId, int? typeId, bool viewsSorted);
     }

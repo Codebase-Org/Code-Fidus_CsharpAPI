@@ -9,7 +9,7 @@ namespace Code_Fidus_CsharpAPI.Controllers
 {
     public class AccountsController : BaseEntitiesController<accounts>
     {
-        //private readonly IBaseService<accounts> _context;
+        private readonly IBaseService<accounts> _context;
         public AccountsController(IBaseService<accounts> context) : base(context) 
         {            
             //_context = context;
@@ -19,6 +19,6 @@ namespace Code_Fidus_CsharpAPI.Controllers
         //public async Task<ActionResult<IEnumerable<accounts>>> GetAccounts()
         //{
         //    return await _context.accounts.ToListAsync();
-        //}
+        //}                
     }
 }

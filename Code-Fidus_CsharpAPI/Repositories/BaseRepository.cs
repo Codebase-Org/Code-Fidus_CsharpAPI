@@ -27,7 +27,7 @@ namespace Code_Fidus_CsharpAPI.Repositories
             
         }
 
-        public async Task<bool> UpdateEntityRepository(int id, BaseEntity entity)
+        public async Task<bool> UpdateEntityRepository(int id, T entity)
         {
             if (!await EntityExists(id))
             {
@@ -40,9 +40,9 @@ namespace Code_Fidus_CsharpAPI.Repositories
             return true;
         }
 
-        public async Task CreateEntityRepository(BaseEntity entity)
+        public async Task CreateEntityRepository(T entity)
         {
-            await _context.Set<T>().AddAsync((T)entity); // Intellisence nonsense (T)
+            await _context.Set<T>().AddAsync(entity); // Intellisence nonsense (T)
             await _context.SaveChangesAsync();            
             // HMM, what to do here?
         }
