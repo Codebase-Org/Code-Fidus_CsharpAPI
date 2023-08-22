@@ -10,5 +10,6 @@ namespace Code_Fidus_CsharpAPI.Interfaces
         Task<bool> UpdateEntityService(int id, BaseEntity entity);
         Task CreateEntityService(BaseEntity entity);
         Task<bool> DeleteEntityService(int id);
+        Task<List<posts>> searchPostsService(string value, int categoryId, int typeId, bool viewsSorted);
     }
 }

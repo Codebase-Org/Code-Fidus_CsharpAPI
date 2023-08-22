@@ -76,5 +76,28 @@ namespace Code_Fidus_CsharpAPI.Repositories
             //return _context.Set<T>().AnyAsync(e => e.id == id);
             return Task.FromResult(false);
         }
+
+        public async Task<List<posts>> searchPostsRepository(string? value, int? categoryId, int? typeId, bool viewsSorted)
+        {
+            IQueryable<posts> query = _context.posts;
+
+            if(!string.IsNullOrEmpty(value))
+            {
+                query = query.Where(post => post.post_headline.Contains(value) || post.post_content.Contains(value));
+            }
+            if(categoryId.HasValue)
+            {
+                query = query.Where(post => post.category_id == categoryId);
+            }
+            if (typeId.HasValue)
+            {
+                query = query.Where(post => post.post_type_id == typeId);
+            }
+            if (viewsSorted)
+            {
+                query = query.OrderByDescending(post => post.post_views);
+            }
+            return await query.ToListAsync();
+        }
     }
 }
