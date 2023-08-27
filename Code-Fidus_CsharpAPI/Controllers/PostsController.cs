@@ -12,12 +12,11 @@ namespace Code_Fidus_CsharpAPI.Controllers
         {            
             _context = context; 
         }
-
-        [HttpGet("SearchPosts/{value}/{categoryId}/{typeId}/{viewsSorted}")]
-        public async Task<ActionResult<IEnumerable<posts>>> SearchPosts(string value, int categoryId, int typeId, bool viewsSorted)
-        {
-            await _context.searchPostsService(value, categoryId, typeId, viewsSorted);
-            return Ok();
+            
+        [HttpGet("SearchPosts/{value?}/{categoryId?}/{typeId?}/{viewsSorted?}")]
+        public async Task<ActionResult<IEnumerable<posts>>> SearchPosts(string? value, int? categoryId, int? typeId, bool viewsSorted)
+        {            
+            return Ok(await _context.searchPostsService(value, categoryId, typeId, viewsSorted));
         }
     }
 }

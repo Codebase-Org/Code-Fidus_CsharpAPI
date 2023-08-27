@@ -41,7 +41,7 @@ namespace Code_Fidus_CsharpAPI.Services
             return await _context.DeleteEntityRepository(id);
         }
 
-        public async Task<List<posts>> searchPostsService(string value, int categoryId, int typeId, bool viewsSorted)
+        public async Task<List<posts>> searchPostsService(string? value, int? categoryId, int? typeId, bool viewsSorted)
         {
             return await _context.searchPostsRepository(value, categoryId, typeId, viewsSorted);
         }
