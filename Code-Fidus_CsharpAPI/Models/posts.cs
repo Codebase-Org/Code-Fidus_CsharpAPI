@@ -21,5 +21,9 @@ namespace Code_Fidus_CsharpAPI.Models
         public DateTime post_time { get; set; }
         public DateTime post_update { get; set; }
         public int post_views { get; set; }
+
+        // Bruges til søgefunktion, hvor mange gange termer matcher i headline og content.
+        [NotMapped]
+        public int matchCount { get; set; } = 0;
     }
 }

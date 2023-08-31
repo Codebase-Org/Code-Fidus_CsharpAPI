@@ -13,8 +13,8 @@ namespace Code_Fidus_CsharpAPI.Controllers
             _context = context; 
         }
             
-        [HttpGet("SearchPosts/{value?}/{categoryId?}/{typeId?}/{viewsSorted?}")]
-        public async Task<ActionResult<IEnumerable<posts>>> SearchPosts(string? value, int? categoryId, int? typeId, bool viewsSorted)
+        [HttpGet("SearchPosts")]
+        public async Task<ActionResult<IEnumerable<posts>>> SearchPosts([FromQuery] string? value, [FromQuery] int? categoryId, [FromQuery] int? typeId, [FromQuery] bool viewsSorted = false)
         {            
             return Ok(await _context.searchPostsService(value, categoryId, typeId, viewsSorted));
         }

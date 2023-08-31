@@ -3,6 +3,8 @@ using Code_Fidus_CsharpAPI.Interfaces;
 using Code_Fidus_CsharpAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
+using Xunit.Sdk;
 
 namespace Code_Fidus_CsharpAPI.Repositories
 {
@@ -14,7 +16,7 @@ namespace Code_Fidus_CsharpAPI.Repositories
         public BaseRepository(DatabaseContext context)
         {
             _context = context;
-        }        
+        }
 
         public async Task<List<T>> GetEntitiesRepository()
         {
@@ -24,7 +26,7 @@ namespace Code_Fidus_CsharpAPI.Repositories
         public async Task<T> GetEntityRepository(int id)
         {
             return await _context.Set<T>().FindAsync(id);
-            
+
         }
 
         public async Task<bool> UpdateEntityRepository(int id, T entity)
@@ -43,7 +45,7 @@ namespace Code_Fidus_CsharpAPI.Repositories
         public async Task CreateEntityRepository(T entity)
         {
             await _context.Set<T>().AddAsync(entity); // Intellisence nonsense (T)
-            await _context.SaveChangesAsync();            
+            await _context.SaveChangesAsync();
             // HMM, what to do here?
         }
 
@@ -81,11 +83,53 @@ namespace Code_Fidus_CsharpAPI.Repositories
         {
             IQueryable<posts> query = _context.posts;
 
-            if(!string.IsNullOrEmpty(value))
+            //if (!string.IsNullOrEmpty(value))
+            //{
+            //    query = query.Where(post => post.post_headline.Contains(value) || post.post_content.Contains(value));
+            //}
+            if (!string.IsNullOrEmpty(value))
             {
-                query = query.Where(post => post.post_headline.Contains(value) || post.post_content.Contains(value));
+                string[] terms = value.Split(new[] { " " }, StringSplitOptions.RemoveEmptyEntries);
+                var matchPosts = await query.ToListAsync();
+
+                // finder umiddelbart de posts der matcher ud fra flere termer.
+                matchPosts = matchPosts.Where(post => terms.Any(term => post.post_headline.Contains(term) || post.post_content.Contains(term))).ToList();
+
+                foreach (var item in matchPosts)
+                {
+                    foreach(var term in terms)
+                    {
+                        // Logik til hvad der skal ske hvis der er flere matches.
+                        int indexHeadline = item.post_headline.ToLower().IndexOf(term.ToLower());
+                        while(indexHeadline != -1)
+                        {
+                            item.matchCount++;
+                            indexHeadline = item.post_headline.ToLower().IndexOf(term.ToLower(), indexHeadline + 1);
+                        }
+
+                        int indexContent = item.post_headline.ToLower().IndexOf(term.ToLower());
+                        while (indexContent != -1)
+                        {
+                            item.matchCount++;
+                            indexContent = item.post_headline.ToLower().IndexOf(term.ToLower(), indexContent + 1);
+                        }
+
+                    }
+                }
+
+                //foreach (var term in terms)
+                //{
+                    
+                //    query = query.Where(post => post.post_headline.Contains(term) || post.post_content.Contains(term));
+                //    //query = query.Select(post => new
+                //    //{
+                //    //    Post = post,
+                //    //    HeadlineMatches = post.post_headline.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Count(word => word.Contains(term)),
+                //    //    ContentMatches = post.post_content.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Count(word => word.Contains(term))
+                //    //}).Where(postWithMatches => postWithMatches.HeadlineMatches > 0 || postWithMatches.ContentMatches > 0).Select(postWithMatches => postWithMatches.Post);
+                //}
             }
-            if(categoryId.HasValue)
+            if (categoryId.HasValue)
             {
                 query = query.Where(post => post.category_id == categoryId);
             }
