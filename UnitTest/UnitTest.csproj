@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Code-Fidus_CsharpAPI\Code-Fidus_CsharpAPI.csproj" />
+    <ProjectReference Include="..\Code-Fidus_CsharpAPI\CodebaseCAPI.csproj" />
   </ItemGroup>
 
 </Project>
