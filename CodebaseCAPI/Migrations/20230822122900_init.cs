@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Code_Fidus_CsharpAPI.Migrations
+namespace CodebaseCAPI.Migrations
 {
     /// <inheritdoc />
     public partial class init : Migration

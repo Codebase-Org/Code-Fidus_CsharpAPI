@@ -1,7 +1,7 @@
-﻿using Code_Fidus_CsharpAPI.Models;
+﻿using CodebaseCAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Code_Fidus_CsharpAPI.Interfaces
+namespace CodebaseCAPI.Interfaces
 {
     public interface IBaseRepository<T> where T : BaseEntity
     {

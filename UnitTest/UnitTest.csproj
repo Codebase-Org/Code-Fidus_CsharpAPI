@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Code-Fidus_CsharpAPI\CodebaseCAPI.csproj" />
+    <ProjectReference Include="..\CodebaseCAPI\CodebaseCAPI.csproj" />
   </ItemGroup>
 
 </Project>

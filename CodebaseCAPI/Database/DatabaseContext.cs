@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Code_Fidus_CsharpAPI.Models;
+using CodebaseCAPI.Models;
 
-namespace Code_Fidus_CsharpAPI.Database
+namespace CodebaseCAPI.Database
 {
     public class DatabaseContext : DbContext
     {

@@ -1,11 +1,11 @@
-﻿using Code_Fidus_CsharpAPI.Database;
-using Code_Fidus_CsharpAPI.Interfaces;
-using Code_Fidus_CsharpAPI.Models;
-using Code_Fidus_CsharpAPI.Services;
+﻿using CodebaseCAPI.Database;
+using CodebaseCAPI.Interfaces;
+using CodebaseCAPI.Models;
+using CodebaseCAPI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace Code_Fidus_CsharpAPI.Controllers
+namespace CodebaseCAPI.Controllers
 {
     public class AccountsController : BaseEntitiesController<accounts>
     {

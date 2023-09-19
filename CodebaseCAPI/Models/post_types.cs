@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
-namespace Code_Fidus_CsharpAPI.Models
+namespace CodebaseCAPI.Models
 {
     public class post_types : BaseEntity
     {

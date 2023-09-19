@@ -4,7 +4,7 @@
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <RootNamespace>Code_Fidus_CsharpAPI</RootNamespace>
+    <RootNamespace>CodebaseCAPI</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

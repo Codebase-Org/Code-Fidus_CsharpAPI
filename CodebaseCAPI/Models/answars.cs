@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Code_Fidus_CsharpAPI.Models
+namespace CodebaseCAPI.Models
 {
     public class answars : BaseEntity
     {

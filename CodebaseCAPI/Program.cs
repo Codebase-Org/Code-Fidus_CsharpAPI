@@ -1,10 +1,10 @@
-﻿using Code_Fidus_CsharpAPI.Database;
+﻿using CodebaseCAPI.Database;
 using Microsoft.EntityFrameworkCore;
-using Code_Fidus_CsharpAPI.Controllers;
-using Code_Fidus_CsharpAPI.Interfaces;
-using Code_Fidus_CsharpAPI.Services;
-using Code_Fidus_CsharpAPI.Models;
-using Code_Fidus_CsharpAPI.Repositories;
+using CodebaseCAPI.Controllers;
+using CodebaseCAPI.Interfaces;
+using CodebaseCAPI.Services;
+using CodebaseCAPI.Models;
+using CodebaseCAPI.Repositories;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);

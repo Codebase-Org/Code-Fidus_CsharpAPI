@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Code_Fidus_CsharpAPI.Database;
-using Code_Fidus_CsharpAPI.Models;
-using Code_Fidus_CsharpAPI.Interfaces;
+using CodebaseCAPI.Database;
+using CodebaseCAPI.Models;
+using CodebaseCAPI.Interfaces;
 
-namespace Code_Fidus_CsharpAPI.Controllers
+namespace CodebaseCAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

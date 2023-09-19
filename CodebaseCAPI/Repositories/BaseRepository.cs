@@ -1,12 +1,12 @@
-﻿using Code_Fidus_CsharpAPI.Database;
-using Code_Fidus_CsharpAPI.Interfaces;
-using Code_Fidus_CsharpAPI.Models;
+﻿using CodebaseCAPI.Database;
+using CodebaseCAPI.Interfaces;
+using CodebaseCAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using Xunit.Sdk;
 
-namespace Code_Fidus_CsharpAPI.Repositories
+namespace CodebaseCAPI.Repositories
 {
     public class BaseRepository<T> : IBaseRepository<T> where T : BaseEntity
     {

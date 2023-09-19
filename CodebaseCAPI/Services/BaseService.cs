@@ -1,9 +1,9 @@
-﻿using Code_Fidus_CsharpAPI.Database;
-using Code_Fidus_CsharpAPI.Interfaces;
-using Code_Fidus_CsharpAPI.Models;
+﻿using CodebaseCAPI.Database;
+using CodebaseCAPI.Interfaces;
+using CodebaseCAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Code_Fidus_CsharpAPI.Services
+namespace CodebaseCAPI.Services
 {
     public class BaseService<T> : IBaseService<T> where T : BaseEntity
     {

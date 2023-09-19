@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Code_Fidus_CsharpAPI.Models
+namespace CodebaseCAPI.Models
 {
     public class categories : BaseEntity
     {
