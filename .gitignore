@@ -361,5 +361,4 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
-/CodebaseCAPI/Migrations/20230919085027_home.cs
-/CodebaseCAPI/Migrations/20230919085027_home.Designer.cs
+/CodebaseCAPI/Migrations
