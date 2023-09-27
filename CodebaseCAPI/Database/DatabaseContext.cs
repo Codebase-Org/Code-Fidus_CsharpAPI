@@ -9,17 +9,18 @@ namespace CodebaseCAPI.Database
         {
             
         }
-        public DbSet<roles> roles { get; set; }
-        public DbSet<accounts> accounts { get; set; }
-        public DbSet<profiles> profiles { get; set; }
-        public DbSet<post_types> post_types { get; set; }
-        public DbSet<categories> categories { get; set; }
-        public DbSet<posts> posts { get; set; }
-        public DbSet<answars> answars { get; set; }
-        public DbSet<follows> follows { get; set; }
-        public DbSet<messages> messages { get; set; }
-        public DbSet<loginhistories> loginhistories { get; set; }
-        public DbSet<motds> motds { get; set; }
-        public DbSet<faqs> faqs { get; set; }
+        public DbSet<role> roles { get; set; }
+        public DbSet<account> accounts { get; set; }
+        public DbSet<profile> profiles { get; set; }
+        public DbSet<post_type> post_types { get; set; }
+        public DbSet<category> categories { get; set; }
+        public DbSet<post> posts { get; set; }
+        public DbSet<answar> answars { get; set; }
+        public DbSet<follow> follows { get; set; }
+        public DbSet<message> messages { get; set; }
+        public DbSet<login_history> login_histories { get; set; }
+        public DbSet<motd> motds { get; set; }
+        public DbSet<faq> faqs { get; set; }
+        public DbSet<education> educations { get; set; }
     }
 }

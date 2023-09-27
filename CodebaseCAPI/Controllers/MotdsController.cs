@@ -5,9 +5,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CodebaseCAPI.Controllers
 {
-    public class MotdsController : BaseEntitiesController<motds>
+    public class MotdsController : BaseEntitiesController<motd>
     {
-        public MotdsController(IBaseService<motds> context) : base(context) 
+        public MotdsController(IBaseService<motd> context) : base(context) 
         {            
         }
     }

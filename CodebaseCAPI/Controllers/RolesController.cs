@@ -7,9 +7,9 @@ namespace CodebaseCAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class RolesController : BaseEntitiesController<roles>
+    public class RolesController : BaseEntitiesController<role>
     {
-        public RolesController(IBaseService<roles> context) : base(context) 
+        public RolesController(IBaseService<role> context) : base(context) 
         {            
         }
     }

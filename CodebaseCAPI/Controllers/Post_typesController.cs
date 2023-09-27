@@ -6,9 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CodebaseCAPI.Controllers
 {
-    public class Post_typesController : BaseEntitiesController<post_types>
+    public class Post_typesController : BaseEntitiesController<post_type>
     {
-        public Post_typesController(IBaseService<post_types> context) : base(context)
+        public Post_typesController(IBaseService<post_type> context) : base(context)
         {
         }
     }

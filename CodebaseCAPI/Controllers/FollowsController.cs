@@ -5,9 +5,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CodebaseCAPI.Controllers
 {
-    public class FollowsController : BaseEntitiesController<follows>
+    public class FollowsController : BaseEntitiesController<follow>
     {
-        public FollowsController(IBaseService<follows> context) : base(context) 
+        public FollowsController(IBaseService<follow> context) : base(context) 
         {            
         }
     }

@@ -5,9 +5,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CodebaseCAPI.Controllers
 {
-    public class MessagesController : BaseEntitiesController<messages>
+    public class MessagesController : BaseEntitiesController<message>
     {
-        public MessagesController(IBaseService<messages> context) : base(context) 
+        public MessagesController(IBaseService<message> context) : base(context) 
         {            
         }
     }

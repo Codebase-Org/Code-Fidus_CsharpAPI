@@ -5,16 +5,16 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CodebaseCAPI.Controllers
 {
-    public class PostsController : BaseEntitiesController<posts>
+    public class PostsController : BaseEntitiesController<post>
     {
-        IBaseService<posts> _context;
-        public PostsController(IBaseService<posts> context) : base(context) 
+        IBaseService<post> _context;
+        public PostsController(IBaseService<post> context) : base(context) 
         {            
             _context = context; 
         }
             
         [HttpGet("SearchPosts")]
-        public async Task<ActionResult<IEnumerable<posts>>> SearchPosts([FromQuery] string? value, [FromQuery] int? categoryId, [FromQuery] int? typeId, [FromQuery] bool viewsSorted = false)
+        public async Task<ActionResult<IEnumerable<post>>> SearchPosts([FromQuery] string? value, [FromQuery] int? categoryId, [FromQuery] int? typeId, [FromQuery] bool viewsSorted = false)
         {            
             return Ok(await _context.searchPostsService(value, categoryId, typeId, viewsSorted));
         }

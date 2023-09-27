@@ -5,9 +5,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CodebaseCAPI.Controllers
 {
-    public class CategoriesController : BaseEntitiesController<categories>
+    public class CategoriesController : BaseEntitiesController<category>
     {
-        public CategoriesController(IBaseService<categories> context) : base(context) 
+        public CategoriesController(IBaseService<category> context) : base(context) 
         {            
         }
     }

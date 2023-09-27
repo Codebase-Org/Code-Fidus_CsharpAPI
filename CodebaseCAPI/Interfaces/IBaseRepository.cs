@@ -10,6 +10,6 @@ namespace CodebaseCAPI.Interfaces
         Task<bool> UpdateEntityRepository(int id, T entity);
         Task CreateEntityRepository(T entity);
         Task<bool> DeleteEntityRepository(int id);
-        Task<List<posts>> searchPostsRepository(string? value, int? categoryId, int? typeId, bool viewsSorted);
+        Task<List<post>> searchPostsRepository(string? value, int? categoryId, int? typeId, bool viewsSorted);
     }
 }

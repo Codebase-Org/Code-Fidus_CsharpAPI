@@ -7,10 +7,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CodebaseCAPI.Controllers
 {
-    public class AccountsController : BaseEntitiesController<accounts>
+    public class AccountsController : BaseEntitiesController<account>
     {
-        private readonly IBaseService<accounts> _context;
-        public AccountsController(IBaseService<accounts> context) : base(context) 
+        private readonly IBaseService<account> _context;
+        public AccountsController(IBaseService<account> context) : base(context) 
         {            
             //_context = context;
         }

@@ -79,9 +79,9 @@ namespace CodebaseCAPI.Repositories
             return Task.FromResult(false);
         }
 
-        public async Task<List<posts>> searchPostsRepository(string? value, int? categoryId, int? typeId, bool viewsSorted)
+        public async Task<List<post>> searchPostsRepository(string? value, int? categoryId, int? typeId, bool viewsSorted)
         {
-            IQueryable<posts> query = _context.posts;
+            IQueryable<post> query = _context.posts;
 
             //if (!string.IsNullOrEmpty(value))
             //{

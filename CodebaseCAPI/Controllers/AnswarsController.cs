@@ -5,9 +5,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CodebaseCAPI.Controllers
 {
-    public class AnswarsController : BaseEntitiesController<answars>
+    public class AnswarsController : BaseEntitiesController<answar>
     {
-        public AnswarsController(IBaseService<answars> context) : base(context) 
+        public AnswarsController(IBaseService<answar> context) : base(context) 
         {            
         }
     }

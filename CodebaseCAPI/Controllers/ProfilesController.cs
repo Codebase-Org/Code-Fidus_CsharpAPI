@@ -5,9 +5,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CodebaseCAPI.Controllers
 {
-    public class ProfilesController : BaseEntitiesController<profiles>
+    public class ProfilesController : BaseEntitiesController<profile>
     {
-        public ProfilesController(IBaseService<profiles> context) : base(context) 
+        public ProfilesController(IBaseService<profile> context) : base(context) 
         {            
         }
     }

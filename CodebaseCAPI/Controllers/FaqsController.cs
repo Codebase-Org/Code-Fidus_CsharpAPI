@@ -5,9 +5,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CodebaseCAPI.Controllers
 {
-    public class FaqsController : BaseEntitiesController<faqs>
+    public class FaqsController : BaseEntitiesController<faq>
     {
-        public FaqsController(IBaseService<faqs> context) : base(context) 
+        public FaqsController(IBaseService<faq> context) : base(context) 
         {            
         }
     }
