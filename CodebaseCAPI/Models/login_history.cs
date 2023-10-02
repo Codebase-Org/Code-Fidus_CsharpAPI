@@ -7,7 +7,7 @@ namespace CodebaseCAPI.Models
     {
         [Key]
         public int loginhist_id { get { return id; } set { id = value; } }
-        [ForeignKey("accounts.account_id")]
+        [ForeignKey("account.account_id")]
         public int account_id { get; set; }
         [Required]
         public DateTime login_time { get; set; }

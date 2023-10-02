@@ -7,7 +7,7 @@ namespace CodebaseCAPI.Models
     {
         [Key]
         public int profile_id { get { return id; } set { id = value; } }
-        [ForeignKey("accounts.account_id")]
+        [ForeignKey("account.account_id")]
         public int account_id { get; set; }
         [Required]
         public string firstname { get; set; }
@@ -15,7 +15,7 @@ namespace CodebaseCAPI.Models
         [Required]
         public string lastname { get; set; }
         public string picture { get; set; }
-        [ForeignKey("educations.education_id")]
+        [ForeignKey("education.education_id")]
         public int education_id { get; set; }
         public string internship { get; set; }
         public string information { get; set; }

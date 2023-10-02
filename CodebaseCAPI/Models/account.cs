@@ -13,9 +13,9 @@ namespace CodebaseCAPI.Models
         public string password { get; set; }
         [Required]
         public string email { get; set; }
-        [ForeignKey("roles.role_id"), Required]
+        [ForeignKey("role.role_id"), Required]
         public int role_id { get; set; }
-        [ForeignKey("accounts.account_id")]
+        [ForeignKey("account.account_id")]
         public int instructor_id { get; set; }
         [Required]
         public int onlineStatus { get; set; }

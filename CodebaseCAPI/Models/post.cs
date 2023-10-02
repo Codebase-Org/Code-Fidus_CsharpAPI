@@ -7,11 +7,11 @@ namespace CodebaseCAPI.Models
     {
         [Key]
         public int post_id { get { return id; } set { id = value; } }
-        [ForeignKey("categories.category_id")]
+        [ForeignKey("category.category_id")]
         public int category_id { get; set; }
-        [ForeignKey("accounts.account_id")]
+        [ForeignKey("account.account_id")]
         public int account_id { get; set; }
-        [ForeignKey("post_types.post_type_id")]
+        [ForeignKey("post_type.post_type_id")]
         public int post_type_id { get; set; }
         [Required]
         public string post_headline { get; set; }

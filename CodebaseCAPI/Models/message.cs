@@ -7,9 +7,9 @@ namespace CodebaseCAPI.Models
     {
         [Key]
         public int message_id { get { return id; } set { id = value; } }
-        [ForeignKey("accounts.account_id")]
+        [ForeignKey("account.account_id")]
         public int from_account_id { get; set; }
-        [ForeignKey("accounts.account_id")]
+        [ForeignKey("account.account_id")]
         public int to_account_id { get; set; }
         [Required]
         public string subject { get; set; }
