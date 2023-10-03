@@ -8,6 +8,6 @@ namespace CodebaseCAPI.Models
         public int category_id { get { return id; } set { id = value; } }
         [Required]
         public string catname { get; set; }
-        public string picture { get; set; }
+        public string? picture { get; set; }
     }
 }

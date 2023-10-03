@@ -11,16 +11,16 @@ namespace CodebaseCAPI.Models
         public int account_id { get; set; }
         [Required]
         public string firstname { get; set; }
-        public string secondname { get; set; }
+        public string? secondname { get; set; }
         [Required]
         public string lastname { get; set; }
-        public string picture { get; set; }
+        public string? picture { get; set; }
         [ForeignKey("education.education_id")]
         public int education_id { get; set; }
-        public string internship { get; set; }
-        public string information { get; set; }
-        public int worktitle { get; set; }
-        public string location { get; set; }
-        public DateTime birthday { get; set; }
+        public string? internship { get; set; }
+        public string? information { get; set; }
+        public string? worktitle { get; set; }
+        public string? location { get; set; }
+        public DateTime? birthday { get; set; }
     }
 }

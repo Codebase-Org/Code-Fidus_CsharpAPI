@@ -5,9 +5,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CodebaseCAPI.Controllers
 {
-    public class LoginhistoriesController : BaseEntitiesController<login_history>
+    public class Login_historiesController : BaseEntitiesController<login_history>
     {
-        public LoginhistoriesController(IBaseService<login_history> context) : base(context) 
+        public Login_historiesController(IBaseService<login_history> context) : base(context) 
         {            
         }
     }

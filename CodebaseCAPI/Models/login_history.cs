@@ -11,6 +11,6 @@ namespace CodebaseCAPI.Models
         public int account_id { get; set; }
         [Required]
         public DateTime login_time { get; set; }
-        public DateTime logout_time { get; set; }
+        public DateTime? logout_time { get; set; }
     }
 }

@@ -19,8 +19,8 @@ namespace CodebaseCAPI.Models
         public string post_content { get; set; }
         [Required]
         public DateTime post_time { get; set; }
-        public DateTime post_update { get; set; }
-        public int post_views { get; set; }
+        public DateTime? post_update { get; set; }
+        public int post_views { get; set; } = 0;
 
         // Bruges til søgefunktion, hvor mange gange termer matcher i headline og content.
         [NotMapped]

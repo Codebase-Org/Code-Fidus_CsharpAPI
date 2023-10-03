@@ -12,7 +12,6 @@ namespace CodebaseCAPI.Models
         [Required]
         public string faq_content { get; set; }
         [Required]
-        public DateTime faq_created_date { get; set; }
-        public DateTime faq_updated_date { get; set; }
+        public DateTime faq_time { get; set; }
     }
 }
