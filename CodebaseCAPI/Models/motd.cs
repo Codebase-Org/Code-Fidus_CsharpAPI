@@ -12,7 +12,7 @@ namespace CodebaseCAPI.Models
         [Required]
         public string title { get; set; }
         [Required]
-        public string context { get; set; }
+        public string content { get; set; }
         [Required]
         public DateTime motd_date { get; set; }
     }
